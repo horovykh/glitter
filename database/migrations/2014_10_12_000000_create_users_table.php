@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email', 250)->unique();
             $table->string('password');
-            $table->string('avatar_url');
+            $table->string('avatar_url')->default('https://unsplash.it/50/50/');
             $table->rememberToken();
             $table->timestamps();
         });

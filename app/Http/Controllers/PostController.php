@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PostController extends Controller
 {
@@ -14,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('index',['posts'=>Post::all()]);
+        return view('index',['posts'=>Post::orderBy('created_at', 'DESC')->get()]);
     }
 
     /**
@@ -44,9 +45,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($singlePosts)
     {
-        //
+        return (view('posts.view', ['posts' => Post::where('id', $singlePosts)->get()]));
+
     }
 
     /**
