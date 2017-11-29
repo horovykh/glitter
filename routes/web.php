@@ -23,7 +23,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/users', 'UsersController@getUser');
-
 Route::resource('/', 'PostController');
 
+Route::get('/{id}', 'PostController@show');

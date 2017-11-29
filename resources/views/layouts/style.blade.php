@@ -23,7 +23,9 @@
     </div>
 </div>
 <div class="content wrapper">
+    <div class="content wrapper">
     @yield('content')
+    </div>
 </div>
 <div class="navigation">
     <div class="wrapper">

@@ -1,7 +1,6 @@
 @extends('layouts.style')
 
 @section('content')
-
     <div class="post box">
         <div class="avatar"><img src="{{$post->user->avatar_url}}"/></div>
         <div class="text">
@@ -17,5 +16,4 @@
             </div>
         </div>
     </div>
-
 @endsection

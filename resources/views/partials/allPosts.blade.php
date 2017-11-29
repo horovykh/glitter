@@ -1,5 +1,3 @@
 @foreach($posts as $post)
-    <div>
-        {{$post->post}}
-    </div>
+    @include('partials.onePost')
 @endforeach
