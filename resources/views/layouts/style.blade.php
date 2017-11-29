@@ -7,11 +7,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <link rel="stylesheet" href="{{asset('css/style.css')}}"/>
 </head>
 <body>
-
 
 <div class="header">
     <div class="logo"><a href="{{ route('index')}}">glitter</a></div>
@@ -31,7 +29,7 @@
 <div class="content wrapper">
     <div class="content wrapper">
     @yield('content')
-    </div>
+</div>
 </div>
 <div class="navigation">
     <div class="wrapper">

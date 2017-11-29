@@ -1,7 +1,7 @@
 <div class="post box">
     <div class="avatar"><img src="{{$post->user->avatar_url}}"/></div>
     <div class="text">
-        <a class="username" href="{{$post->user_id}}">{{$post->user->name}}</a>:
+        <a class="username" href="{{url('/user/'.$post->user_id)}}">{{$post->user->name}}</a>:
         {{$post->post}}
     </div>
     <div class="meta">

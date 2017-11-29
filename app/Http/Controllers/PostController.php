@@ -47,9 +47,11 @@ class PostController extends Controller
      */
     public function show($singlePosts)
     {
-        return (view('posts.view', ['posts' => Post::where('id', $singlePosts)->get()]));
+        return (view('index', ['posts' => Post::where('id', $singlePosts)->get()]));
 
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

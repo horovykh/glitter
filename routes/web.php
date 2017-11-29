@@ -26,3 +26,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/', 'PostController');
 
 Route::get('/{id}', 'PostController@show');
+
+Route::get('/user/{user_id}', 'UsersController@showUserPosts');
