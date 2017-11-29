@@ -6,7 +6,7 @@
         <div class="post box">
             <div class="avatar"><img src="http://unsplash.it/50/50"/></div>
             <div class="text">
-                <a class="username" href="#">username</a>:
+                <a class="username" href="#">{{$post->user->name}}</a>:
                 {{$post->post}}
             </div>
             <div class="meta">

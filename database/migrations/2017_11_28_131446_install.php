@@ -16,18 +16,16 @@ class Install extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->text('post');
+            $table->integer('user_id')->default(0);
+            $table->integer('post_id')->default(0);
             $table->timestamps();
         });
 
-        Schema::create('post_user', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned()->index();
-            $table->integer('post_id')->unsigned()->index();
-
-        });
-
-        Schema::table('post_user', function ($table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+        Schema::create('comments', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('text');
+            $table->integer('post_id')->default(0);
+            $table->timestamps();
         });
     }
 
@@ -39,6 +37,6 @@ class Install extends Migration
     public function down()
     {
         Schema::dropIfExists('posts');
-        Schema::dropIfExists('post_user');
+        Schema::dropIfExists('comments');
     }
 }
