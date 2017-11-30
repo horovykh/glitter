@@ -33,10 +33,13 @@
 </div>
 <div class="navigation">
     <div class="wrapper">
-        <a href="#">&larr;Previous Page</a>
-        <a href="#">Next Page&rarr;</a>
+        @if(!$posts)
+        <a href="{{$posts->previousPageUrl()}}">&larr;Previous Page</a>
+        <a href="{{$posts->nextPageUrl()}}">Next Page&rarr;</a>
+        @else()
+
+        @endif
     </div>
 </div>
-
 </body>
 </html>
