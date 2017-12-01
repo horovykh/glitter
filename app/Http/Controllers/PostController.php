@@ -47,7 +47,7 @@ class PostController extends Controller
      */
     public function show($singlePosts)
     {
-        return (view('index', ['posts' => Post::where('id', $singlePosts)->get()]));
+        return (view('index', ['posts' => Post::where('id', $singlePosts)->simplePaginate()]));
 
     }
 

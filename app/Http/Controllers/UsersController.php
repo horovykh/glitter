@@ -10,6 +10,6 @@ class UsersController extends Controller
 {
     public function showUserPosts($userPosts)
     {
-        return view('index', ['posts' => Post::where('user_id', $userPosts)->orderBy('id', 'DESC')->get()]);
+        return view('index', ['posts' => Post::where('user_id', $userPosts)->orderBy('id', 'DESC')->simplePaginate()]);
     }
 }

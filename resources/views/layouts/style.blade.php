@@ -31,15 +31,6 @@
     @yield('content')
 </div>
 </div>
-<div class="navigation">
-    <div class="wrapper">
-        @if(!$posts)
-        <a href="{{$posts->previousPageUrl()}}">&larr;Previous Page</a>
-        <a href="{{$posts->nextPageUrl()}}">Next Page&rarr;</a>
-        @else()
-
-        @endif
-    </div>
-</div>
+    @yield('paginate')
 </body>
 </html>
