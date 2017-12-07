@@ -19,13 +19,7 @@
     <div class="menu"><a href="{{ route('register')}}">Register</a></div>
     @endauth
 </div>
-@auth
-    <div class="publish"><div class="wrapper">
-            <textarea placeholder="What's on your mind?"></textarea>
-            <button type="submit">Send</button>
-        </div>
-    </div>
-@endauth
+    @yield('form')
 <div class="content wrapper">
     <div class="content wrapper">
     @yield('content')

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\App;
 
 class PostController extends Controller
@@ -25,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('index');
     }
 
     /**
@@ -36,13 +38,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newPost = new Post();
+        $newPost->post = $request->input('post');
+        $newPost->user_id = Auth::user()->id;
+        $newPost->save();
+
+        return redirect(action('PostController@index', ''));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param $singlePosts
      * @return \Illuminate\Http\Response
      */
     public function show($singlePosts)
