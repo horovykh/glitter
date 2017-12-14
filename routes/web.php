@@ -15,9 +15,10 @@
     return view('welcome');
 });*/
 
-Route::get('/index', function () {
+/*Route::get('/index', function () {
    return view('index');
-});
+});*/
+
 
 Auth::routes();
 
@@ -28,3 +29,7 @@ Route::resource('/', 'PostController');
 Route::get('/{id}', 'PostController@show');
 
 Route::get('/user/{user_id}', 'UsersController@showUserPosts');
+
+Route::get('/profile', function (){
+    return view('auth.profile');
+});

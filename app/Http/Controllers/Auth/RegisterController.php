@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
 
+
         ]);
     }
 
@@ -68,14 +69,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-        return User::create([
+        if (empty($data['avatar_image'])){
+            return User::create([
             'name'  => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            $path = Storage::putFile('public', $data['avatar_image']),
-            $url = Storage::url($path),
-            'avatar_url' => asset($url)
-        ]);
+            'avatar_url' => asset('storage/ava.jpg')
+            ]);
+        }
+
+        else {
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                $path = Storage::putFile('public', $data['avatar_image']),
+                $url = Storage::url($path),
+                'avatar_url' => asset($url)
+            ]);
+        }
     }
 }

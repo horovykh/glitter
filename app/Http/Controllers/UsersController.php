@@ -12,4 +12,8 @@ class UsersController extends Controller
     {
         return view('index', ['posts' => Post::where('user_id', $userPosts)->orderBy('id', 'DESC')->simplePaginate()]);
     }
+
+    public function showProfile(){
+        return view('welcome');
+    }
 }
