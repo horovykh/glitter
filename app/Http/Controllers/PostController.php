@@ -15,9 +15,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Post $posts)
     {
-        return view('index',['posts'=>Post::orderBy('created_at', 'DESC')->simplePaginate(5)]);
+        return view('index',['posts'=>Post::orderBy('created_at', $posts, 'DESC')->simplePaginate(5)]);
     }
 
     /**

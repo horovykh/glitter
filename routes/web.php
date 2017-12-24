@@ -11,14 +11,13 @@
 |
 */
 
-/*Route::get('/welcome', function () {
+Route::get('/welcome', function () {
     return view('welcome');
-});*/
+});
 
-/*Route::get('/index', function () {
-   return view('index');
-});*/
-
+Route::get('/index', function () {
+   return redirect(action('PostController@index', 'index'));
+});
 
 Auth::routes();
 
@@ -26,10 +25,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/', 'PostController');
 
-Route::get('/{id}', 'PostController@show');
+Route::get('/post/{id}', 'PostController@show');
 
 Route::get('/user/{user_id}', 'UsersController@showUserPosts');
 
-Route::get('/profile', function (){
-    return view('auth.profile');
-});
+Route::get('/profile', 'UsersController@showProfile')->name('profile');
+
+Route::put('/profile', 'UsersController@update')->name('update');

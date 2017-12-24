@@ -6,7 +6,7 @@
     </div>
     <div class="meta">
         <div class="date">{{$post->created_at}}</div>
-        <div class="permalink"><a href="{{url($post->id)}}">#</a></div>
+        <div class="permalink"><a href="{{url('/post/'.$post->id)}}">#</a></div>
         <div class="links">
             <a href="#">Reply</a>
             <a href="#">Repost</a>
