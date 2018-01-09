@@ -17,13 +17,13 @@ class Install extends Migration
             $table->increments('id');
             $table->text('post');
             $table->integer('user_id')->default(0);
-            $table->integer('post_id')->default(0);
             $table->timestamps();
         });
 
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('text');
+            $table->text('comment');
+            $table->integer('user_id')->default(0);
             $table->integer('post_id')->default(0);
             $table->timestamps();
         });
