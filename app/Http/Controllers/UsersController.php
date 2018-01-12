@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\User;
-//use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-//use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 
 
@@ -16,7 +16,7 @@ class UsersController extends Controller
 {
     public function showUserPosts($userPosts)
     {
-        return view('index', ['posts' => Post::where('user_id', $userPosts)->orderBy('id', 'DESC')->simplePaginate()]);
+        return view('index', ['posts' => Post::where('user_id', $userPosts)->orderBy('id', 'DESC')->paginate()]);
     }
 
     public function showProfile(User $user){

@@ -22,7 +22,7 @@ class Install extends Migration
 
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('comment');
+            $table->text('text');
             $table->integer('user_id')->default(0);
             $table->integer('post_id')->default(0);
             $table->timestamps();

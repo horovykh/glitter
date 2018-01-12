@@ -12,6 +12,6 @@ class InstallSeeder extends Seeder
     public function run()
     {
         factory(App\Post::class, 10)->create();
-        factory(App\Comment::class, 30)->create();
+        factory(App\Comment::class, 5)->create();
     }
 }
