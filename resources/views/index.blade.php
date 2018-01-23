@@ -11,4 +11,3 @@
 @section('paginate')
         @include('partials.paginator')
 @endsection
-

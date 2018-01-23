@@ -27,6 +27,8 @@ Route::resource('/', 'PostController');
 
 Route::get('/post/{id}', 'PostController@show');
 
+Route::post('/post/{id}', 'CommentController@store');
+
 Route::get('/user/{user_id}', 'UsersController@showUserPosts');
 
 Route::get('/profile', 'UsersController@showProfile')->name('profile');

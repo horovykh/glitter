@@ -54,8 +54,7 @@ class PostController extends Controller
      */
     public function show($singlePosts)
     {
-        return (view('replies.index',
-            ['posts' => Post::where('id', $singlePosts)->with('comments.user')->get()]));
+        return (view('replies.index',['posts' => Post::where('id', $singlePosts)->with('comments.user')->get()]));
 
     }
 
