@@ -1,2 +1,2 @@
 # glitter
-blog with comments and replies similarly twitter 
+blog with comments and replies similarly twitter on Laravel
